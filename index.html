@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="force-dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hannah Koo — UX &amp; Motion Design</title>
+<meta name="description" content="Hannah Koo is a UX and motion designer who builds the tools her team ends up depending on.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600&family=Inter:wght@400;500;600&family=Geist+Pixel&family=Yarndings+12&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-mark">Hannah Koo</a>
+  <button class="nav-toggle" aria-expanded="false">Menu</button>
+  <ul class="nav-links">
+    <li><a href="portfolio.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero hero--video">
+  <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" poster="assets/hero-poster.jpg">
+    <source src="assets/hero-bg.mp4" type="video/mp4">
+  </video>
+  <div class="hero-video-scrim"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Sr. Studio Artist at DEPT® — Motion × Studio hybrid</div>
+    <h1 class="hero-headline">Creative production,<br>
+      moti<span class="sym sym-2" aria-hidden="true">e</span>n design &<br>
+      the automation that<br>
+      holds it <span style="white-space:nowrap">together.</span></h1>
+    <p class="hero-lede">
+      I bridge creative production and automation — an AE/Figma generalist
+      building AI-integrated workflows. Four-plus years inside fast-moving
+      production for Meta's growth marketing accounts taught me where the real
+      bottlenecks live — and most of them aren't creative ones.
+    </p>
+    <div class="hero-actions">
+      <a href="portfolio.html" class="btn btn-primary">See the work</a>
+      <a href="about.html" class="btn btn-ghost">About me</a>
+    </div>
+  </div>
+</header>
+
+<section id="featured">
+  <div class="section-head">
+    <h2>Selected work</h2>
+    <span class="section-num">01</span>
+  </div>
+
+  <a href="portfolio.html#fluent" class="work-row">
+    <span class="work-year">2024–</span>
+    <span>
+      <span class="work-title">FLUENT</span>
+      <div class="work-tags">Internal tooling · UX-driven iteration · Password protected</div>
+    </span>
+    <span class="work-arrow">→</span>
+  </a>
+
+  <a href="portfolio.html#motion" class="work-row">
+    <span class="work-year">2022–</span>
+    <span>
+      <span class="work-title">Motion &amp; performance ad work</span>
+      <div class="work-tags">Meta growth marketing · Static + animated · Selected pieces</div>
+    </span>
+    <span class="work-arrow">→</span>
+  </a>
+
+  <div style="margin-top: 32px;">
+    <a href="portfolio.html" class="text-link">View full portfolio →</a>
+  </div>
+</section>
+
+<section id="about-teaser">
+  <div class="split">
+    <h2>Currently</h2>
+    <div>
+      <p>
+        Senior Studio Artist at DEPT®, working within the studio team on
+        Meta's growth marketing accounts (Facebook, Instagram, WhatsApp,
+        Threads). Outside of production work, I build the internal tools
+        that make that production faster for everyone on the team.
+      </p>
+      <a href="about.html" class="text-link">Read the full story →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <span>© <span id="year"></span> Hannah Koo</span>
+  <ul class="footer-links">
+    <li><a href="mailto:hannahkoo@duck.com">Email</a></li>
+    <li><a href="https://github.com/hannahkoo-svg" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="https://linkedin.com/in/hannahkoo" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://instagram.com/koo.dsgn" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

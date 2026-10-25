@@ -1,0 +1,807 @@
+/* ============================================
+   Design tokens
+   ============================================ */
+:root {
+  --paper: #F1F0EC;
+  --paper-raised: #E8E6DF;
+  --ink: #16181D;
+  --ink-soft: #4A4C54;
+  --muted: #85878E;
+  --line: #D3D1C8;
+  --accent: #3452FF;
+  --accent-soft: #E6EAFF;
+  --accent-ink: #101636;
+
+  --font-display: 'Lexend Deca', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  --measure: 640px;
+  --gutter: clamp(24px, 5vw, 72px);
+
+  --ease: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #16181D;
+    --paper-raised: #1D1F26;
+    --ink: #F1F0EC;
+    --ink-soft: #C7C8CD;
+    --muted: #7D7F87;
+    --line: #33353D;
+    --accent: #6E85FF;
+    --accent-soft: #1C2140;
+    --accent-ink: #E6EAFF;
+  }
+}
+
+/* Force pure-black theme regardless of OS light/dark setting.
+   Used on the home page so it blends with the chalk-sketch video. */
+html.force-dark {
+  --paper: #000000;
+  --paper-raised: #0E0F12;
+  --ink: #F4F3EF;
+  --ink-soft: #C7C8CD;
+  --muted: #7D7F87;
+  --line: #22232A;
+  --accent: #4DF3FF;        /* 시안 네온 액센트 (네비 밑줄/링크호버/선택 등) */
+  --accent-soft: #0E2A2E;
+  --accent-ink: #000000;
+}
+
+html.force-dark .btn-primary {
+  background: #FFFFFF;
+  color: #000000;
+  border-color: #FFFFFF;
+}
+html.force-dark .btn-primary:hover {
+  background: var(--accent);
+  color: #000000;
+  border-color: var(--accent);
+}
+html.force-dark .btn-ghost {
+  color: #FFFFFF;
+  border-color: #3A3B42;
+}
+html.force-dark .btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Page titles echo the home headline's pixel font */
+html.force-dark .hero h1 {
+  font-family: 'Geist Pixel', 'Courier New', monospace;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.16;
+}
+
+/* Section counters: pixel + neon, cyberdeck style */
+html.force-dark .section-num {
+  font-family: 'Geist Pixel', 'Courier New', monospace;
+  color: var(--accent);
+}
+
+/* Small neon tint on the eyebrow labels for consistency */
+html.force-dark .hero-eyebrow { color: var(--ink-soft); }
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  /* Cute Yarndings cursor. Swap the file for another symbol:
+     cursor-smiley.png / cursor-diamond.png / cursor-flower.png
+     (path is relative to THIS css file, hence ../assets/)
+     To use it only on the black home page, change this line to:
+       html.force-dark body { cursor: ... }  */
+  cursor: url('../assets/cursor-smiley.png') 13 13, auto;
+}
+
+/* Keep the normal hand pointer on clickable things so they still feel clickable */
+a, button, .btn, .nav-toggle, .work-row, .lock-close, summary {
+  cursor: pointer;
+}
+/* Text field keeps the normal text caret */
+.lock-form input { cursor: text; }
+
+a {
+  color: inherit;
+}
+
+img { max-width: 100%; display: block; }
+
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+p { margin: 0 0 1em; max-width: var(--measure); }
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ============================================
+   Nav
+   ============================================ */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px var(--gutter);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-mark {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--ink-soft);
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease);
+}
+
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .nav-links {
+    position: fixed;
+    inset: 66px 0 0 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--paper);
+    padding: 8px var(--gutter) 24px;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+  }
+  .nav-links.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .nav-links li {
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-links a {
+    display: block;
+    padding: 16px 0;
+  }
+  .nav-toggle { display: block; }
+}
+
+/* ============================================
+   Hero
+   ============================================ */
+.hero {
+  padding: clamp(64px, 12vw, 140px) var(--gutter) clamp(48px, 8vw, 96px);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-eyebrow {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+/* ---- Video hero (home page only) ---- */
+.hero--video {
+  position: relative;
+  overflow: hidden;
+  min-height: min(88vh, 720px);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  background: #000;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  z-index: 0;
+}
+
+/* Left-to-right scrim so the headline stays legible over the art,
+   and the sketch on the right still reads through. */
+.hero-video-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, #000 0%, rgba(0,0,0,0.78) 34%, rgba(0,0,0,0.25) 62%, rgba(0,0,0,0) 85%),
+    linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 40%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  /* Stack on phones: video block on top, headline + text below it. */
+  .hero--video {
+    display: block;
+    min-height: 0;
+    padding: 0 0 clamp(36px, 9vw, 56px);  /* flush video; gap before next section */
+  }
+  .hero-video {
+    position: relative;        /* back into normal flow, at the top */
+    width: 100%;
+    height: 50vh;              /* ~half the screen, not full height */
+    object-fit: cover;         /* resize/crop to fill (keeps the old behavior) */
+    object-position: right center;  /* right-aligned so the illustration stays */
+  }
+  .hero-video-scrim { display: none; }   /* no overlay when stacked */
+  .hero-content {
+    padding: 28px var(--gutter) 0;        /* headline sits below the video */
+  }
+  /* Let the headline use the full width on phones (overrides .hero h1's 16ch).
+     Lower this if you want the lines to break sooner. */
+  .hero h1.hero-headline { max-width: 100%; }
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+}
+
+.hero h1 {
+  font-size: clamp(20px, 6.4vw, 54px);
+  max-width: 16ch;
+}
+
+/* Home-page pixel headline with inline Yarndings symbols */
+.hero-headline {
+  font-family: 'Geist Pixel', 'Courier New', monospace;
+  font-weight: 400;
+  font-size: 40px;          /* ← 데스크탑 크기 (이 숫자만 바꾸면 됨) */
+  line-height: 1.14;
+  letter-spacing: 0;
+  max-width: none;
+}
+
+.hero-headline .sym {
+  font-family: 'Yarndings 12', sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  /* nudge so the symbol sits optically on the text baseline */
+  display: inline-block;
+  transform: translateY(0.06em);
+}
+
+.hero-headline .sym-1 { color: #4DF3FF; } /* 형광 하늘색 */
+.hero-headline .sym-2 { color: #B6FF3C; } /* 형광 연두 */
+.hero-headline .sym-3 { color: #FDFF3A; } /* 형광 노랑 */
+
+/* On wider screens, keep the exact 4-line layout (the <br> breaks only,
+   no soft-wrapping). On phones it reflows naturally. */
+@media (min-width: 760px) {
+  .hero-headline { white-space: nowrap; }
+}
+
+/* Mobile headline size — change this one number for phones */
+@media (max-width: 760px) {
+  .hero-headline { font-size: 28px; }
+}
+
+.hero-lede {
+  margin-top: 28px;
+  font-size: clamp(18px, 2vw, 21px);
+  color: var(--ink-soft);
+  max-width: 52ch;
+}
+
+/* ---- Marquee band (about page title) ---- */
+.marquee {
+  display: block;
+  width: 100%;
+  max-width: 52ch;            /* matches the body text width below */
+  overflow: hidden;
+  background: #000F;        /* 형광 파란 띠 */
+  color: #FFFFFF;
+  border-radius: 0px;
+  /* 1st value = 밴드 위 간격, 3rd value = 밴드↔본문 간격 (이 숫자만 바꾸면 됨) */
+  margin: 4px 0 22px;
+  padding: 0;
+  letter-spacing: 0;
+}
+
+/* Gap below the band is controlled solely by .marquee's margin-bottom above */
+.marquee + .hero-lede { margin-top: 0; }
+
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee-scroll 13s linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+.marquee-item {
+  font-family: 'Geist Pixel', 'Courier New', monospace;  /* 헤딩(픽셀) 폰트 */
+  font-weight: 400;
+  font-size: clamp(22px, 3.2vw, 40px);
+  line-height: 1;
+  padding: 12px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 24px;        /* spacing between repeats */
+}
+
+.marquee-item .yd {
+  font-family: 'Yarndings 12', sans-serif;
+  font-weight: 400;
+  transform: translateY(0.04em);
+}
+
+@keyframes marquee-scroll {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+.hero-actions {
+  margin-top: 36px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   Buttons / links
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 3px;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+.btn-ghost:hover {
+  border-color: var(--ink);
+}
+
+.text-link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s var(--ease);
+}
+.text-link:hover {
+  text-decoration-color: var(--accent);
+}
+
+/* ============================================
+   Sections
+   ============================================ */
+section {
+  padding: clamp(56px, 9vw, 96px) var(--gutter);
+  border-bottom: 1px solid var(--line);
+}
+
+section:last-of-type { border-bottom: none; }
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.section-head h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+}
+
+.section-num {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ============================================
+   Work list (asymmetric rows, not cards)
+   ============================================ */
+.work-row {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: 28px;
+  align-items: baseline;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+  transition: padding-left 0.25s var(--ease);
+}
+
+.work-row:hover { padding-left: 8px; }
+
+.work-row:last-child { border-bottom: 1px solid var(--line); }
+
+.work-year {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.work-title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 500;
+}
+
+.work-tags {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.work-arrow {
+  color: var(--muted);
+  font-size: 20px;
+  transition: transform 0.25s var(--ease), color 0.25s var(--ease);
+}
+
+.work-row:hover .work-arrow {
+  transform: translateX(4px);
+  color: var(--accent);
+}
+
+/* ============================================
+   Two-col layout (about page)
+   ============================================ */
+.split {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: var(--gutter);
+}
+
+@media (max-width: 800px) {
+  .split { grid-template-columns: 1fr; }
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+.timeline-item:last-child { border-bottom: 1px solid var(--line); }
+
+.timeline-date {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.timeline-role {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 8px 0 0;
+  list-style: none;
+}
+
+.skill-list li {
+  font-size: 14px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--ink-soft);
+}
+
+/* ============================================
+   Contact
+   ============================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin-top: 12px;
+}
+
+.contact-item dt {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.contact-item dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 20px;
+}
+
+/* ============================================
+   Blog list
+   ============================================ */
+.post-row {
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.post-row:last-child { border-bottom: 1px solid var(--line); }
+
+.post-date {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.post-title {
+  font-family: var(--font-display);
+  font-size: clamp(19px, 2.2vw, 23px);
+}
+
+.post-excerpt {
+  color: var(--ink-soft);
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.site-footer {
+  padding: 40px var(--gutter) 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.footer-links a:hover { color: var(--ink); }
+
+/* ============================================
+   Utilities
+   ============================================ */
+.mono-note {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ============================================
+   Password lock (portfolio.html)
+   ============================================ */
+body.has-lock:not(.is-unlocked) {
+  overflow: hidden;
+}
+
+.lock-screen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gutter);
+  background: var(--paper);
+}
+
+body.has-lock:not(.is-unlocked) .lock-screen {
+  display: flex;
+}
+
+.lock-box {
+  max-width: 360px;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  padding-top: 40px;
+}
+
+.lock-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.lock-close:hover {
+  background: var(--paper-raised);
+  color: var(--ink);
+}
+
+.lock-box h1 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.lock-box p {
+  color: var(--ink-soft);
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.lock-form {
+  display: flex;
+  gap: 10px;
+}
+
+.lock-form input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+
+.lock-form input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.lock-error {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #C0392B;
+  min-height: 1.4em;
+}

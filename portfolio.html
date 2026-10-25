@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="force-dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Hannah Koo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600&family=Inter:wght@400;500;600&family=Geist+Pixel&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="has-lock">
+
+<div class="lock-screen">
+  <div class="lock-box">
+    <button type="button" class="lock-close" id="lock-close" aria-label="Close">✕</button>
+    <h1>Work is password protected</h1>
+    <p>Ask me for the password if you don't have it.</p>
+    <form id="lock-form" class="lock-form">
+      <input type="password" id="lock-input" placeholder="Password" autocomplete="off" autofocus>
+      <button type="submit" class="btn btn-primary">Enter</button>
+    </form>
+    <div id="lock-error" class="lock-error"></div>
+  </div>
+</div>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-mark">Hannah Koo</a>
+  <button class="nav-toggle" aria-expanded="false">Menu</button>
+  <ul class="nav-links">
+    <li><a href="portfolio.html" aria-current="page">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero" style="padding-bottom: 40px;">
+  <div class="hero-eyebrow">Work</div>
+  <h1 style="font-size: clamp(34px, 5vw, 56px);">Selected projects</h1>
+</header>
+
+<section id="fluent">
+  <div class="section-head">
+    <h2>FLUENT</h2>
+    <span class="section-num">Internal tool · UX case study</span>
+  </div>
+  <div class="split">
+    <div>
+      <p class="mono-note">Role — Design &amp; development<br>
+      Timeline — 2024–ongoing<br>
+      Status — <!-- EDIT: 얼마나 공개할지 정한 후 채우기 --></p>
+    </div>
+    <div>
+      <p>
+        <!-- EDIT: 두 파트로 나눠서 쓰면 좋을듯 —
+             1) 툴 자체가 뭘 하는지 (지금은 high-level로만)
+             2) UX journey: 초기 버전 → 유저 피드백 → 뭘 어떻게 바꿨는지 → 지금 몇 명이 쓰는지
+             어느 클래리티로 쓸지는 나중에 다시 얘기하기로 함 — 지금은 자리만 잡아둠. -->
+        An internal Figma plugin ecosystem for the studio team, built and
+        then continuously re-shaped around how people actually used it —
+        not a one-off script, but something that went through real
+        iteration against user behavior.
+      </p>
+      <p class="mono-note">
+        [ Problem → Initial version → What users struggled with → What changed → Where it is now ]
+      </p>
+      <!-- EDIT: 스크린샷/데모 GIF 넣을 자리 -->
+      <!-- <img src="assets/fluent-demo.gif" alt="FLUENT plugin demo"> -->
+    </div>
+  </div>
+</section>
+
+<section id="motion">
+  <div class="section-head">
+    <h2>Motion &amp; performance ad work</h2>
+    <span class="section-num">4 selected pieces</span>
+  </div>
+  <p style="max-width: var(--measure); margin-bottom: 32px;">
+    <!-- EDIT -->
+    Individual finished pieces rather than a highlight reel — each one is a
+    complete 30-second unit from Meta growth marketing work.
+  </p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px;">
+    <div>
+      <div style="aspect-ratio: 9/16; background: var(--paper-raised); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px;">
+        30s piece — video/GIF here
+      </div>
+      <div class="work-title" style="font-size: 18px; margin-top: 12px;"><!-- EDIT: 타이틀 --></div>
+      <div class="work-tags"><!-- EDIT: 클라이언트 · 포맷 --></div>
+    </div>
+    <div>
+      <div style="aspect-ratio: 9/16; background: var(--paper-raised); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px;">
+        30s piece — video/GIF here
+      </div>
+      <div class="work-title" style="font-size: 18px; margin-top: 12px;"><!-- EDIT: 타이틀 --></div>
+      <div class="work-tags"><!-- EDIT: 클라이언트 · 포맷 --></div>
+    </div>
+    <div>
+      <div style="aspect-ratio: 9/16; background: var(--paper-raised); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px;">
+        30s piece — video/GIF here
+      </div>
+      <div class="work-title" style="font-size: 18px; margin-top: 12px;"><!-- EDIT: 타이틀 --></div>
+      <div class="work-tags"><!-- EDIT: 클라이언트 · 포맷 --></div>
+    </div>
+    <div>
+      <div style="aspect-ratio: 9/16; background: var(--paper-raised); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px;">
+        30s piece — video/GIF here
+      </div>
+      <div class="work-title" style="font-size: 18px; margin-top: 12px;"><!-- EDIT: 타이틀 --></div>
+      <div class="work-tags"><!-- EDIT: 클라이언트 · 포맷 --></div>
+    </div>
+  </div>
+  <p class="mono-note" style="margin-top: 20px;">
+    /* EDIT: 각 박스 background에 video 태그나 img 넣기. 예시:
+       &lt;video src="assets/motion-1.mp4" autoplay muted loop playsinline&gt;&lt;/video&gt; */
+  </p>
+</section>
+
+<footer class="site-footer">
+  <span>© <span id="year"></span> Hannah Koo</span>
+  <ul class="footer-links">
+    <li><a href="mailto:hannahkoo@duck.com">Email</a></li>
+    <li><a href="https://github.com/hannahkoo-svg" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="https://linkedin.com/in/hannahkoo" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://instagram.com/koo.dsgn" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/lock.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
