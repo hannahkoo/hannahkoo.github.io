@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="force-dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why I built a Figma plugin instead of asking for headcount — Hannah Koo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600&family=Inter:wght@400;500;600&family=Geist+Pixel&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="../index.html" class="nav-mark">Hannah Koo</a>
+  <button class="nav-toggle" aria-expanded="false">Menu</button>
+  <ul class="nav-links">
+    <li><a href="../portfolio.html">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../blog.html" aria-current="page">Blog</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero" style="padding-bottom: 32px;">
+  <div class="hero-eyebrow">Blog · Draft</div>
+  <h1 style="font-size: clamp(30px, 4.4vw, 48px); max-width: 20ch;">
+    Why I built a Figma plugin instead of asking for headcount
+  </h1>
+</header>
+
+<section style="padding-top: 0;">
+  <div style="max-width: var(--measure);">
+    <p>
+      <!-- EDIT: 실제 글 내용으로 교체. 이 페이지는 블로그 포스트 하나의 템플릿이야.
+           새 글 쓸 때마다 이 파일을 복사해서 blog/ 폴더 안에 새 파일명으로 저장하고,
+           blog.html 리스트에 링크 추가하면 돼. -->
+      This is a template post. Replace this paragraph with your actual
+      writing. Keep the same header/nav/footer structure so the styling
+      stays consistent across posts.
+    </p>
+    <p>
+      To publish a new post: duplicate this file, rename it (e.g.
+      <code>second-post.html</code>), edit the title and content, then add
+      a new row to <code>blog.html</code> linking to it.
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <span>© <span id="year"></span> Hannah Koo</span>
+  <ul class="footer-links">
+    <li><a href="mailto:hannahkoo@duck.com">Email</a></li>
+    <li><a href="https://github.com/hannahkoo-svg" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="https://linkedin.com/in/hannahkoo" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://instagram.com/koo.dsgn" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
