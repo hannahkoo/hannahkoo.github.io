@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why I built a Figma plugin instead of asking for headcount — Hannah Koo</title>
+<title>Tooling Was Never the Engineers' Job — Hannah Koo</title>
+<meta name="description" content="A designer's case for building your own tools. Old news in tech. Somehow still heresy in design.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600&family=Inter:wght@400;500;600&family=Geist+Pixel&display=swap" rel="stylesheet">
@@ -22,30 +23,53 @@
   </ul>
 </nav>
 
-<header class="hero" style="padding-bottom: 32px;">
-  <div class="hero-eyebrow">Blog · Draft</div>
-  <h1 style="font-size: clamp(30px, 4.4vw, 48px); max-width: 20ch;">
-    Why I built a Figma plugin instead of asking for headcount
-  </h1>
+<header class="hero" style="padding-bottom: 28px;">
+  <div class="hero-eyebrow">Blog</div>
+  <h1 style="font-size: clamp(26px, 3.8vw, 42px); line-height: 1.2; max-width: 20ch;">Tooling Was Never the Engineers' Job</h1>
+  <p class="post-dek">Old news in tech. Somehow still heresy in design.</p>
 </header>
 
-<section style="padding-top: 0;">
-  <div style="max-width: var(--measure);">
-    <p>
-      <!-- EDIT: 실제 글 내용으로 교체. 이 페이지는 블로그 포스트 하나의 템플릿이야.
-           새 글 쓸 때마다 이 파일을 복사해서 blog/ 폴더 안에 새 파일명으로 저장하고,
-           blog.html 리스트에 링크 추가하면 돼. -->
-      This is a template post. Replace this paragraph with your actual
-      writing. Keep the same header/nav/footer structure so the styling
-      stays consistent across posts.
-    </p>
-    <p>
-      To publish a new post: duplicate this file, rename it (e.g.
-      <code>second-post.html</code>), edit the title and content, then add
-      a new row to <code>blog.html</code> linking to it.
-    </p>
-  </div>
-</section>
+<figure class="post-lead">
+  <video autoplay muted loop playsinline aria-label="Animated hands typing at superhuman speed, from Ghost in the Shell" poster="../assets/blog-hands-poster.jpg">
+    <source src="../assets/blog-hands.mp4" type="video/mp4">
+  </video>
+</figure>
+
+<article class="post-article">
+  <p>I'm not an engineer. But my team runs on a tool I built — and honestly, that still surprises me a little.</p>
+
+  <p>When other designers ask how I made it, they're usually hoping for a shortcut: the magic prompt, the right stack. I don't have one. What actually made it work had nothing to do with being technical. It's that I'd lived the problem long enough to know it inside out — in a way someone outside the work just wouldn't.</p>
+
+  <p>If you spend time in tech circles, none of this is new. AI lowers the barrier, domain knowledge is the real moat — you've heard it a hundred times. But that message somehow still hasn't reached most design studios, where the quiet assumption is that building tools belongs to engineers, and the rest of us wait for the roadmap. I believed that too, for a long time. I don't anymore.</p>
+
+  <h2>AI can generate ideas. Knowing which ones matter is harder.</h2>
+
+  <p>Early on, I pointed Claude at a much bigger question: find me a business to build. Pull the top products launched on Product Hunt in the last 30 days, break down the problems they solve, find the patterns, size the markets, rank five underserved gaps a solo builder could realistically ship.</p>
+
+  <p>It was genuinely good at the gathering and organizing — I had a tidy, confident-looking map in minutes.</p>
+
+  <p>And I couldn't really use any of it, because I had no way to tell which of those openings was real. I could ask for market sizes all day; that didn't give me the judgment to tell a promising market from an interesting-sounding sentence. The AI gave me an answer. I just wasn't equipped to trust it.</p>
+
+  <h2>The difference was context.</h2>
+
+  <p>Building for my own team was the opposite feeling.</p>
+
+  <p>The tool itself wasn't clever. It took over the busywork in our localization production — the repetitive, mechanical steps between a finished design and a shipped asset across dozens of languages. I'd done all of it by hand for years, so I knew exactly where it dragged and what everyone had quietly learned to tolerate.</p>
+
+  <p>That's also why I wasn't just handing AI a vague wish and hoping for the best. I designed the thing — properly. I worked out what each button should do, what triggers what, how someone actually moves through it from start to finish. The interaction, the logic, the small decisions that make a tool feel obvious instead of annoying — that was the real work, and it's what my UX training was for. AI turned it into working code. It couldn't have told me what the tool should be.</p>
+
+  <h2>The tools will keep changing</h2>
+
+  <p>Most weeks I can't keep up. A new model, a new tool, a new workflow every weekend — and if I'm not constantly catching up, I feel like I'm already behind. Some weeks it's genuinely exhausting. I work in tech and I still feel it.</p>
+
+  <p>But I've been here before. I learned Flash as a teenager and watched it die. Same with half the motion tools I started on — gone. After enough of that, I stopped treating every new release like something I had to master. Most of them won't be here in five years. A lot of what I learn will expire. I've mostly made my peace with that.</p>
+
+  <p>What hasn't expired is knowing my own corner of the work — where it hurts, what people actually need, which problems are worth solving. That part has never shown up in a changelog.</p>
+
+  <p>And lately I keep noticing the same thing: AI output is usually technically right. Polished, even. But a lot of it feels empty to me — correct and a little lifeless at once. Whatever makes something feel like a person made it, like someone actually cared how it felt to use — that still has to come from me.</p>
+
+  <p>So I've stopped trying to swallow all of it. I pick up the tools my work actually asks for, and I let the rest go by. On the weeks I'm tired of running to keep up, I've started letting myself slow down and make the thing I care about instead. The tools will keep changing. Why something's worth building hasn't.</p>
+</article>
 
 <footer class="site-footer">
   <span>© <span id="year"></span> Hannah Koo</span>
