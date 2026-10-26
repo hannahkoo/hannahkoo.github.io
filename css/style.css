@@ -399,11 +399,11 @@ p { margin: 0 0 1em; max-width: var(--measure); }
   width: 100%;
   max-width: 52ch;            /* matches the body text width below */
   overflow: hidden;
-  background: #000F;        /* 형광 파란 띠 */
-  color: #FFFFFF;
-  border-radius: 0px;
+  background: transparent;    /* 투명 띠 (페이지 블랙이 비침) */
+  color: #fff;               /* 흰 글씨 */
+  border-radius: 7px;
   /* 1st value = 밴드 위 간격, 3rd value = 밴드↔본문 간격 (이 숫자만 바꾸면 됨) */
-  margin: 4px 0 22px;
+  margin: 4px 0 32px;
   padding: 0;
   letter-spacing: 0;
 }
@@ -423,7 +423,7 @@ p { margin: 0 0 1em; max-width: var(--measure); }
 .marquee-item {
   font-family: 'Geist Pixel', 'Courier New', monospace;  /* 헤딩(픽셀) 폰트 */
   font-weight: 400;
-  font-size: clamp(22px, 3.2vw, 40px);
+  font-size: clamp(22px, 3.2vw, 30px);
   line-height: 1;
   padding: 12px 0;
   display: inline-flex;
@@ -675,6 +675,90 @@ section:last-of-type { border-bottom: none; }
   color: var(--ink-soft);
   margin-top: 8px;
   font-size: 15px;
+}
+
+/* Blog list card with a looping video thumbnail */
+.post-row--media {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.post-thumb {
+  overflow: hidden;
+  border-radius: 7px;
+  aspect-ratio: 16 / 9;
+  background: var(--paper-raised);
+}
+.post-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s var(--ease);
+}
+.post-row--media:hover .post-thumb video { transform: scale(1.04); }
+
+@media (max-width: 640px) {
+  .post-row--media {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+/* ---- Blog post (article page) ---- */
+.post-dek {
+  font-style: italic;
+  color: var(--muted);
+  font-size: clamp(16px, 2vw, 19px);
+  margin-top: 14px;
+  max-width: var(--measure);
+}
+
+/* Blog post hero: the GITS clip behind the title as an eye-catcher */
+.hero--post {
+  min-height: clamp(300px, 48vh, 440px);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.hero--post .hero-video { object-position: center; }
+.hero--post .hero-video-scrim {
+  background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.5) 100%);
+}
+.hero--post .post-dek { color: #DADBDF; }
+
+@media (max-width: 760px) {
+  /* Shorter video banner on phones; title stacks below it */
+  .hero--post { min-height: 0; }
+  .hero--post .hero-video { height: 34vh; object-position: center; }
+}
+
+.post-lead {
+  margin: 0 0 clamp(28px, 5vw, 44px);
+  padding: 0 var(--gutter);
+}
+.post-lead video {
+  width: 100%;
+  max-width: var(--measure);
+  border-radius: 8px;
+  display: block;
+}
+
+.post-article {
+  padding: 0 var(--gutter) clamp(56px, 9vw, 96px);
+}
+.post-article > * { max-width: var(--measure); }
+.post-article p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0 0 1.3em;
+}
+.post-article h2 {
+  font-size: clamp(21px, 2.6vw, 26px);
+  color: var(--ink);
+  margin: 1.9em 0 0.7em;
+  letter-spacing: -0.01em;
 }
 
 /* ============================================
