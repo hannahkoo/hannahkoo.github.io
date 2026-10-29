@@ -40,35 +40,24 @@
   <h1 style="font-size: clamp(34px, 5vw, 56px);">Selected projects</h1>
 </header>
 
-<section id="fluent">
+<section id="fluent" class="case case--teaser">
   <div class="section-head">
-    <h2>FLUENT</h2>
-    <span class="section-num">Internal tool · UX case study</span>
+    <h2>Scalable Systems for Figma Production</h2>
+    <span class="section-num">01</span>
   </div>
-  <div class="split">
-    <div>
-      <p class="mono-note">Role — Design &amp; development<br>
-      Timeline — 2024–ongoing<br>
-      Status — <!-- EDIT: 얼마나 공개할지 정한 후 채우기 --></p>
-    </div>
-    <div>
-      <p>
-        <!-- EDIT: 두 파트로 나눠서 쓰면 좋을듯 —
-             1) 툴 자체가 뭘 하는지 (지금은 high-level로만)
-             2) UX journey: 초기 버전 → 유저 피드백 → 뭘 어떻게 바꿨는지 → 지금 몇 명이 쓰는지
-             어느 클래리티로 쓸지는 나중에 다시 얘기하기로 함 — 지금은 자리만 잡아둠. -->
-        An internal Figma plugin ecosystem for the studio team, built and
-        then continuously re-shaped around how people actually used it —
-        not a one-off script, but something that went through real
-        iteration against user behavior.
-      </p>
-      <p class="mono-note">
-        [ Problem → Initial version → What users struggled with → What changed → Where it is now ]
-      </p>
-      <!-- EDIT: 스크린샷/데모 GIF 넣을 자리 -->
-      <!-- <img src="assets/fluent-demo.gif" alt="FLUENT plugin demo"> -->
-    </div>
-  </div>
+  <p class="case-dek">Localization-ready automation, built to let a team — and its AI workflows — ship on-brand work fast.</p>
+  <p class="mono-note">Role — Design &amp; development · Built in-house · 2024–ongoing</p>
+
+  <figure class="reel reel--sm">
+    <a href="portfolio-system.html" class="reel-link" aria-label="See the full case study">
+      <video autoplay muted loop playsinline poster="assets/fluent-reel-poster.jpg" aria-label="Figma automation suite — localized banner highlight reel">
+        <source src="assets/fluent-reel.mp4" type="video/mp4">
+      </video>
+    </a>
+    <figcaption>An in-house automation suite — localized static production, built to scale.</figcaption>
+  </figure>
+
+  <a href="portfolio-system.html" class="btn btn-primary case-more">See the full case →</a>
 </section>
 
 <section id="motion">
@@ -77,52 +66,46 @@
     <span class="section-num">4 selected pieces</span>
   </div>
   <p style="max-width: var(--measure); margin-bottom: 32px;">
-    <!-- EDIT -->
-    Individual finished pieces rather than a highlight reel — each one is a
-    complete 30-second unit from Meta growth marketing work.
+    Performance ad work across Meta's family of apps — each platform its own
+    canvas, specs, and rhythm. Tap one to see the pieces.
   </p>
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px;">
-    <div>
-      <div style="aspect-ratio: 9/16; background: var(--paper-raised); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px;">
-        30s piece — video/GIF here
-      </div>
-      <div class="work-title" style="font-size: 18px; margin-top: 12px;"><!-- EDIT: 타이틀 --></div>
-      <div class="work-tags"><!-- EDIT: 클라이언트 · 포맷 --></div>
-    </div>
-    <div>
-      <div style="aspect-ratio: 9/16; background: var(--paper-raised); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px;">
-        30s piece — video/GIF here
-      </div>
-      <div class="work-title" style="font-size: 18px; margin-top: 12px;"><!-- EDIT: 타이틀 --></div>
-      <div class="work-tags"><!-- EDIT: 클라이언트 · 포맷 --></div>
-    </div>
-    <div>
-      <div style="aspect-ratio: 9/16; background: var(--paper-raised); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px;">
-        30s piece — video/GIF here
-      </div>
-      <div class="work-title" style="font-size: 18px; margin-top: 12px;"><!-- EDIT: 타이틀 --></div>
-      <div class="work-tags"><!-- EDIT: 클라이언트 · 포맷 --></div>
-    </div>
-    <div>
-      <div style="aspect-ratio: 9/16; background: var(--paper-raised); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px;">
-        30s piece — video/GIF here
-      </div>
-      <div class="work-title" style="font-size: 18px; margin-top: 12px;"><!-- EDIT: 타이틀 --></div>
-      <div class="work-tags"><!-- EDIT: 클라이언트 · 포맷 --></div>
-    </div>
+  <div class="platform-grid">
+    <a class="platform-tile" href="work-fb.html" aria-label="Facebook work">
+      <video class="tile-video" autoplay muted loop playsinline poster="assets/fb-motion1.png">
+        <source src="assets/fb-motion1.mp4" type="video/mp4">
+      </video>
+      <span class="tile-overlay"></span>
+      <img class="tile-logo" src="assets/fb-logo.png" alt="Facebook">
+    </a>
+    <a class="platform-tile" href="work-ig.html" aria-label="Instagram work">
+      <video class="tile-video" autoplay muted loop playsinline poster="assets/ig-motion1.png">
+        <source src="assets/ig-motion1.mp4" type="video/mp4">
+      </video>
+      <span class="tile-overlay"></span>
+      <img class="tile-logo" src="assets/ig-logo.png" alt="Instagram">
+    </a>
+    <a class="platform-tile" href="work-wa.html" aria-label="WhatsApp work">
+      <video class="tile-video" autoplay muted loop playsinline poster="assets/wa-motion1.png">
+        <source src="assets/wa-motion1.mp4" type="video/mp4">
+      </video>
+      <span class="tile-overlay"></span>
+      <img class="tile-logo" src="assets/wa-logo.png" alt="WhatsApp">
+    </a>
+    <a class="platform-tile platform-tile--etc" href="work-etc.html" aria-label="Threads, Messenger and more">
+      <video class="tile-video" autoplay muted loop playsinline poster="assets/etc-motion1.png">
+        <source src="assets/etc-motion1.mp4" type="video/mp4">
+      </video>
+      <span class="tile-overlay"></span>
+      <img class="tile-logo" src="assets/etc-logo.png" alt="Threads, Messenger and more">
+    </a>
   </div>
-  <p class="mono-note" style="margin-top: 20px;">
-    /* EDIT: 각 박스 background에 video 태그나 img 넣기. 예시:
-       &lt;video src="assets/motion-1.mp4" autoplay muted loop playsinline&gt;&lt;/video&gt; */
-  </p>
 </section>
 
 <footer class="site-footer">
   <span>© <span id="year"></span> Hannah Koo</span>
   <ul class="footer-links">
-    <li><a href="mailto:hannahkoo@duck.com">Email</a></li>
-    <li><a href="https://github.com/hannahkoo-svg" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="mailto:koo.dsgn@gmail.com">Email</a></li>
     <li><a href="https://linkedin.com/in/hannahkoo" target="_blank" rel="noopener">LinkedIn</a></li>
     <li><a href="https://instagram.com/koo.dsgn" target="_blank" rel="noopener">Instagram</a></li>
   </ul>

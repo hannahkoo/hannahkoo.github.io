@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="force-dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEPT / META — Facebook — Hannah Koo</title>
+<meta name="description" content="Motion and static work for Meta's Facebook team — performance ad executions built for virality and attention.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600&family=Inter:wght@400;500;600&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="has-lock">
+
+<div class="lock-screen">
+  <div class="lock-box">
+    <button type="button" class="lock-close" id="lock-close" aria-label="Close">✕</button>
+    <h1>Work is password protected</h1>
+    <p>Ask me for the password if you don't have it.</p>
+    <form id="lock-form" class="lock-form">
+      <input type="password" id="lock-input" placeholder="Password" autocomplete="off" autofocus>
+      <button type="submit" class="btn btn-primary">Enter</button>
+    </form>
+    <div id="lock-error" class="lock-error"></div>
+  </div>
+</div>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-mark">Hannah Koo</a>
+  <button class="nav-toggle" aria-expanded="false">Menu</button>
+  <ul class="nav-links">
+    <li><a href="portfolio.html" aria-current="page">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="pcase-head">
+  <div class="pcase-head-inner">
+    <div class="pcase-titleblock">
+      <div class="pcase-kicker"><a href="portfolio.html" class="back-link">← Work</a></div>
+      <h1 class="pcase-title">DEPT / META</h1>
+      <div class="pcase-subtitle">Facebook</div>
+    </div>
+    <p class="pcase-intro">Embedded with Meta's Facebook, Instagram, and WhatsApp teams, producing hundreds of executions built for virality and attention. The work spanned branding and UI expression — in step with content creators, the client's in-house designers, and boutique studio vendors — and scaled to well over 200 assets per concept, adapted across channels, placements, sizes, and languages.</p>
+  </div>
+</header>
+
+<section class="pcase">
+  <figure class="media-wide hero-wrap">
+    <video class="hero-auto" muted loop playsinline poster="assets/fb-main-motion.png" aria-label="Facebook — featured motion piece">
+      <source src="assets/fb-main-motion.mp4" type="video/mp4">
+    </video>
+    <button type="button" class="hero-sound" aria-label="Toggle sound">🔇</button>
+  </figure>
+
+  <div class="section-label">Motion</div>
+  <div class="motion-grid">
+    <video controls playsinline preload="metadata" poster="assets/fb-motion1.png" aria-label="Facebook motion piece 1">
+      <source src="assets/fb-motion1.mp4" type="video/mp4">
+    </video>
+    <video controls playsinline preload="metadata" poster="assets/fb-motion2.png" aria-label="Facebook motion piece 2">
+      <source src="assets/fb-motion2.mp4" type="video/mp4">
+    </video>
+    <video controls playsinline preload="metadata" poster="assets/fb-motion3.png" aria-label="Facebook motion piece 3">
+      <source src="assets/fb-motion3.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="section-label">Static</div>
+  <figure class="media-wide">
+    <video autoplay muted loop playsinline poster="assets/fb-static.png" aria-label="Facebook — static highlight">
+      <source src="assets/fb-static.mp4" type="video/mp4">
+    </video>
+  </figure>
+</section>
+
+<nav class="page-nav">
+  <a href="portfolio.html" class="page-nav-back">← Back to work</a>
+  <a href="work-ig.html" class="page-nav-next">View next →</a>
+</nav>
+
+<footer class="site-footer">
+  <span>© <span id="year"></span> Hannah Koo</span>
+  <ul class="footer-links">
+    <li><a href="mailto:koo.dsgn@gmail.com">Email</a></li>
+    <li><a href="https://linkedin.com/in/hannahkoo" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://instagram.com/koo.dsgn" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/lock.js"></script>
+<script src="js/hero.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

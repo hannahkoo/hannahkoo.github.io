@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="force-dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scalable Systems for Figma Production — Hannah Koo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Inter+Tight:wght@700;800&family=Geist+Pixel&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="has-lock">
+
+<div class="lock-screen">
+  <div class="lock-box">
+    <button type="button" class="lock-close" id="lock-close" aria-label="Close">✕</button>
+    <h1>Work is password protected</h1>
+    <p>Ask me for the password if you don't have it.</p>
+    <form id="lock-form" class="lock-form">
+      <input type="password" id="lock-input" placeholder="Password" autocomplete="off" autofocus>
+      <button type="submit" class="btn btn-primary">Enter</button>
+    </form>
+    <div id="lock-error" class="lock-error"></div>
+  </div>
+</div>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-mark">Hannah Koo</a>
+  <button class="nav-toggle" aria-expanded="false">Menu</button>
+  <ul class="nav-links">
+    <li><a href="portfolio.html" aria-current="page">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="pcase-head">
+  <div class="pcase-kicker"><a href="portfolio.html" class="back-link">← Work</a></div>
+  <h1 class="pcase-title">Scalable Systems for Figma Production</h1>
+  <p class="case-dek">Localization-ready automation, built to let a team — and its AI workflows — ship on-brand work fast.</p>
+  <p class="mono-note">Role — Design &amp; development · Built in-house · 2024–ongoing</p>
+</header>
+
+<section class="case">
+  <figure class="media-wide">
+    <video controls playsinline preload="metadata" poster="assets/fluent-reel-poster.jpg" aria-label="Figma automation suite — localized banner highlight reel">
+      <source src="assets/fluent-reel.mp4" type="video/mp4">
+    </video>
+    <figcaption>An in-house automation suite — localized static production, built to scale.</figcaption>
+  </figure>
+
+  <!-- HEADLINE + ABOUT -->
+  <div class="case-header">
+    <h2 class="case-headline">Production<br>at 83% less.</h2>
+    <div class="about-system">
+      <h3>About This System</h3>
+      <p>This suite was developed internally by me, as the static lead, to streamline banner localization across 78 languages. It grew out of hands-on production experience — every feature exists because a real bottleneck needed solving. And it's never stood still: the toolkit is maintained and evolves to fit the needs of each new project and client.</p>
+      <p>Note — the interface shown in the reel isn't the actual tool UI. It's an abstract version created for the highlight reel.</p>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="case-block">
+    <h3>Same budget. 40% more output.</h3>
+    <p>Leadership set a 35–40% surge in volume. Under the old workflow, absorbing it would have meant scaling the team. But the bottleneck wasn't hours — it was manual repetition. So instead of adding headcount, I automated the friction.</p>
+  </div>
+
+  <!-- IMPACT STATS -->
+  <ul class="stat-row">
+    <li>
+      <span class="stat-num">83%</span>
+      <span class="stat-label">faster production — a ~25-hour manual lift compressed to a ~2-hour focused pass</span>
+    </li>
+    <li>
+      <span class="stat-num">+3.0</span>
+      <span class="stat-label">FTE of capacity added — more throughput, no new headcount</span>
+    </li>
+    <li>
+      <span class="stat-num">$3.1k</span>
+      <span class="stat-label">/yr saved by replacing paid third-party plugin licenses</span>
+    </li>
+  </ul>
+
+  <!-- BEFORE / AFTER -->
+  <div class="case-block">
+    <h3>From a 25-hour manual lift to a 2-hour focused pass.</h3>
+    <div class="ba">
+      <div class="ba-item">
+        <span class="ba-tag">Before</span>
+        <div class="ba-bar"><span class="ba-fill ba-fill--before"></span></div>
+        <span class="ba-val">~25 hrs</span>
+      </div>
+      <div class="ba-item">
+        <span class="ba-tag">After</span>
+        <div class="ba-bar"><span class="ba-fill ba-fill--after"></span></div>
+        <span class="ba-val">~2 hrs</span>
+      </div>
+    </div>
+    <p>On a standard 30-language, 270-banner build, that's roughly 18–23 hours reclaimed per major project — redirected out of mechanical setup and into design judgment and client-facing iteration.</p>
+  </div>
+
+  <!-- SOLUTION / MODULES -->
+  <div class="case-block">
+    <h3>A few focused tools, not one big script.</h3>
+    <p>The suite is modular by design — each tool removes one specific source of manual rework, and together they cover the full localized-banner pipeline from setup to export.</p>
+    <ul class="modules">
+      <li>
+        <span class="mod-num">01</span>
+        <h4>Banner Localization tool</h4>
+        <p class="mod-type">Figma plugin</p>
+        <p>Utility that automates the localization process by eliminating manual rework.</p>
+      </li>
+      <li>
+        <span class="mod-num">02</span>
+        <h4>Copy Management tool</h4>
+        <p class="mod-type">Figma plugin · Standalone web app</p>
+        <p>Custom logic eliminating the most common source of human error.</p>
+      </li>
+      <li>
+        <span class="mod-num">03</span>
+        <h4>Internal work-stages solution</h4>
+        <p class="mod-type">Figma plugin · Standalone web app</p>
+        <p>Customized plugin, tailored specifically to our workflow needs for instant, multi-language population.</p>
+      </li>
+      <li>
+        <span class="mod-num">04</span>
+        <h4>Layout management</h4>
+        <p class="mod-type">Figma</p>
+        <p>Utility that populates components and templates, plus many other layout changes.</p>
+      </li>
+    </ul>
+    <p class="mono-note">Client-safe by design — pure JavaScript, zero dependencies, no external CDNs or third-party libraries. Client IP is removed from working files automatically.</p>
+  </div>
+
+  <!-- DESIGN-JUDGMENT SIGNAL -->
+  <div class="case-block">
+    <h3>Designed around how the team actually works.</h3>
+    <p>None of this started as a spec. Each tool was built, watched in real use, and reshaped against how people actually moved through a build — where they hesitated, what they re-did by hand, which steps quietly broke at volume. The engineering was the easy part; knowing <em>which</em> friction was worth removing came from doing the production work myself.</p>
+  </div>
+
+  <!-- COMPOUNDING -->
+  <div class="case-block">
+    <h3>An institutional asset — and compounding.</h3>
+    <ul class="why">
+      <li><strong>Documented &amp; standardized.</strong> Templates and workflow are codified, so the efficiency gains transfer to every designer on the floor — not just me.</li>
+      <li><strong>Owned, not rented.</strong> In-house tool replaces third-party SaaS. The advantage doesn't walk out the door, and it recurs every year.</li>
+      <li><strong>Built to scale.</strong> Higher volume without higher overhead — the system absorbs the surge the headcount can't.</li>
+    </ul>
+  </div>
+
+</section>
+
+<nav class="page-nav">
+  <a href="portfolio.html" class="page-nav-back">← Back to work</a>
+  <a href="work-fb.html" class="page-nav-next">View next →</a>
+</nav>
+
+<footer class="site-footer">
+  <span>© <span id="year"></span> Hannah Koo</span>
+  <ul class="footer-links">
+    <li><a href="mailto:koo.dsgn@gmail.com">Email</a></li>
+    <li><a href="https://linkedin.com/in/hannahkoo" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://instagram.com/koo.dsgn" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/lock.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
