@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="force-dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>We Might Be Moving from UX to AX — Hannah Koo</title>
+<meta name="description" content="The next users aren't human. A designer on Agent Experience (AX) — and why formatting your work so machines can read it is already a design job.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600&family=Inter:wght@400;500;600&family=Geist+Pixel&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="../index.html" class="nav-mark">Hannah Koo</a>
+  <button class="nav-toggle" aria-expanded="false">Menu</button>
+  <ul class="nav-links">
+    <li><a href="../portfolio.html">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../blog.html" aria-current="page">Blog</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero" style="padding-bottom: 28px;">
+  <div class="hero-eyebrow">Blog</div>
+  <h1 style="font-size: clamp(26px, 3.8vw, 42px); line-height: 1.2; max-width: 20ch;">We Might Be Moving from UX to AX</h1>
+  <p class="post-dek">The next users aren't human. And if you've ever written markdown for your AI, you've already started designing for them.</p>
+</header>
+
+<figure class="post-lead">
+  <img src="../assets/ux-ax.jpg" alt="UX arrow AX — the next user isn't human">
+</figure>
+
+<article class="post-article">
+  <p>A few days ago I was rebuilding this portfolio, and somewhere in the middle I asked my AI a dumb-sounding question: how do I make this readable for the hiring agents that might screen it before a person ever does? It gave me a list — cleaner meta descriptions, structured data, a plain-text summary a machine could parse without rendering the page. I did most of it. Then I sat there for a second, because I'd just spent an afternoon designing for a user with no eyes.</p>
+
+  <p>We're in one of those transitional stretches that feels bigger while you're standing in it. The systems are getting smarter than us at more and more things — but the part that keeps getting missed is that smarter doesn't mean self-sufficient. An agent still can't automate or govern a domain it has no context for. It needs the shape of the work from the people who do the work. (If you read my first post, that's the thing I keep circling back to.)</p>
+
+  <p>So the question I can't put down is a designer's question: if more of what we build is going to be read, used, and acted on by agents instead of people — where's our job in that?</p>
+
+  <p>Here's the funny part. We're already doing it. We just haven't called it anything.</p>
+
+  <p>Every time a designer or a vibe-coder says "write it in markdown, the model handles that better" — that's it. That's design for a non-human user. Structuring a note in Obsidian so an agent can actually traverse it. Dropping an <code>llms.txt</code> so a crawler gets the clean version. Formatting a prompt so the thing on the other end doesn't get lost. None of that is UX. It's AX — agent experience — and it turns out it already has a name. People started using it while I wasn't looking.</p>
+
+  <p>So I've started thinking of it as a shift, not a replacement. UX was built to human standards — what's easy for a person to see, click, understand. AX asks a stranger set of questions. What does an agent need in order to "experience" something correctly? Where do its interactions even happen — not on a screen, but in a file, an API, a payment it makes on your behalf? What does a good experience mean for a user that doesn't feel anything?</p>
+
+  <p>I don't have clean answers. The far end of this — agents transacting, agents with their own economy, maybe their own small social spaces — is the deep end, and I'd be lying if I said I fully get it yet. I'm watching, not pronouncing.</p>
+
+  <p>But the near end I can touch. It's the afternoon I spent making my own site legible to a machine that might read it before a human does. Small, dumb, concrete — and probably the first real UX-for-agents thing I've ever shipped.</p>
+
+  <p>We're living in a stretch that's more cinematic than the movies were. The least I can do is notice who the audience is becoming.</p>
+</article>
+
+<footer class="site-footer">
+  <span>© <span id="year"></span> Hannah Koo</span>
+  <ul class="footer-links">
+    <li><a href="mailto:koo.dsgn@gmail.com">Email</a></li>
+    <li><a href="https://linkedin.com/in/hannahkoo" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://instagram.com/koo.dsgn" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
