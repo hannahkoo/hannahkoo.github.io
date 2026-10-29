@@ -17,4 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Deterrents against casual video grabbing (not real protection —
+  // files are still reachable via the browser's network tab).
+  document.querySelectorAll('video').forEach((v) => {
+    v.setAttribute('controlsList', 'nodownload noplaybackrate');
+    v.setAttribute('oncontextmenu', 'return false');
+    v.disablePictureInPicture = true;
+    v.addEventListener('contextmenu', (e) => e.preventDefault());
+  });
 });
