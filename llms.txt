@@ -1,0 +1,30 @@
+# Hannah K
+
+Studio Artist and Motion Designer at DEPT®, creating high-quality digital
+campaigns across platforms. I translate creative concepts into polished motion
+and static assets — blending design, storytelling, and production — and build
+the workflow automation that delivers them at scale.
+
+## About
+- Role: Senior Studio Artist, DEPT® (global digital advertising agency) — 4+ years, remote
+- Client focus: Meta growth-marketing accounts — Facebook, Instagram, WhatsApp (and related Meta surfaces)
+- What I do: static & motion ad production; workflow design & optimization; custom automation and AI-integrated post-production; technical onboarding, guidelines, and team training
+- Specialties: Figma, design systems, localization at scale (78 languages), motion graphics & 2D animation, AI-integrated workflows, Adobe Creative Cloud
+- Education: BFA in Communication Design, New York City College of Technology (City Tech, CUNY), Cum Laude — coursework in UX/UI design, identity design, and motion graphics
+- Location: United States (remote)
+- Open to: brand / design-systems and design-engineering-adjacent roles, and collaborations
+
+## Selected work
+- Scalable Systems for Figma Production — an in-house automation suite that cut localized static-banner production time by roughly 83%. (Case study is password-protected; details available on request.)
+- Motion & performance ad work across Meta's family of apps.
+
+## Pages
+- Home: https://hannahkoo.github.io/
+- About: https://hannahkoo.github.io/about.html
+- Work (portfolio — password-protected): https://hannahkoo.github.io/portfolio.html
+- Blog: https://hannahkoo.github.io/blog.html
+- Contact: https://hannahkoo.github.io/contact.html
+
+## Contact
+- LinkedIn: https://www.linkedin.com/in/hannahkoo
+- Instagram: https://instagram.com/koo.dsgn
